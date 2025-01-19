@@ -1,0 +1,216 @@
+/* Search and Filter Section */
+.search-filter {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .search-box {
+    flex: 2;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .search-box input:focus {
+    outline: none;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.1);
+  }
+  
+  .filter-box {
+    flex: 1;
+  }
+  
+  .filter-box select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-box select:focus {
+    outline: none;
+    border-color: #e67e22;
+  }
+  
+  /* Meals Grid Layout */
+  .meals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  #meals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    list-style: none;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  @media (max-width: 1200px) {
+    #meals {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #meals {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  }
+  
+  .meal-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .meal-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .meal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .meal-content {
+    padding: 1.5rem;
+  }
+  
+  .meal-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .meal-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .meal-price {
+    font-size: 1.25rem;
+    color: #e67e22;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .add-to-cart {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #d35400;
+  }
+  
+  /* Loading State */
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  
+  /* No Results State */
+  .no-results {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .search-filter {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .search-box,
+    .filter-box {
+      flex: none;
+      width: 100%;
+    }
+  
+    .meals-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+  
+    .meal-content {
+      padding: 1rem;
+    }
+  }
+  
+  /* Animation for new meals being added */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .meal-card {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .meals-loading,
+  .meals-error {
+    text-align: center;
+    margin: 2rem auto;
+    color: #464646;
+    font-size: 1.5rem;
+  }
+  
+  .meals-error {
+    color: #ca3e51;
+  }
+  
+  @media (max-width: 768px) {
+    #meals {
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      width: 95%;
+      padding: 0.5rem;
+    }
+  }
